@@ -46,8 +46,8 @@
       }
 
       main {
-        display: flex;
-        gap: 20px;
+        display: main;
+        
       }
 
       article {
@@ -101,9 +101,48 @@
 .proj p {
   margin-left: 10px;
 }
+.box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 10px;
+  background-color: #fafafa;
 
-      
-    </style>
+  /* Smooth hover animation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.proj summary {
+  font-size: 18px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Arrow (collapsed state) */
+.proj summary::before {
+  content: "▶";  /* right arrow */
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+
+/* Arrow when opened */
+.proj[open] summary::before {
+  transform: rotate(90deg); /* arrow rotates when expanded */
+}
+#skills ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  gap: 8px 20px; /* space between items */
+  padding-left: 20px; /* keep bullet alignment clean */
+}
+</style>
   </head>
 
   <body>
@@ -115,23 +154,22 @@
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
       <a href="#skills">Skills</a>
-    </nav>
+      <a href="#contact">Contact</a>
+     </nav>
 
     <main>
-      <article id="about">
+     <article id="about" class="box">
         <h2>About Me</h2>
         <p>
           Hello! I'm Sameer, a passionate web developer with good knowledge of
           HTML and CSS. I enjoy creating semantic, responsive, and accessible
-          web pages.
+          web pages. I have pursued a Data Science Course and can well implement its algorithms to solve real-life problems.
         </p>
       </article>
 
-   <article id="projects">
+  <article id="projects" class="box">
   <h2>Projects</h2>
-
   <details class="proj">
     <summary><strong>Portfolio Website</strong></summary>
     <p>
@@ -139,26 +177,21 @@
       education, and projects.
     </p>
   </details>
-
-  <details class="proj">
+<details class="proj">
     <summary><strong>Air Quality Prediction App</strong></summary>
     <p>
       A machine learning project that predicts the Air Quality Index (AQI)
       using historical data.
     </p>
   </details>
-
-  <details class="proj">
+<details class="proj">
     <summary><strong>Blog Platform</strong></summary>
     <p>
       A simple blog layout created using semantic HTML and responsive CSS.
     </p>
   </details>
 </article>
-
-
-
-      <article id="skills">
+<article id="skills" class="box">
         <h2>Skills</h2>
         <ul>
           <li>HTML5 & CSS3</li>
@@ -166,11 +199,13 @@
           <li>Responsive Design</li>
           <li>Data Analysis</li>
           <li>Machine Learning Basics</li>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>Git & GitHub</li>
         </ul>
       </article>
-      
 
-      <aside id="contact">
+    <aside id="contact">
         <h2>Contact Info</h2>
         <p>Email: sameerpatil048@gmail.com</p>
         <p>Phone: 8408846457</p>
@@ -179,17 +214,13 @@
         <ul>
           <li>
             <a
-              href="https://www.linkedin.com/in/sameer-patil-785b58328"
-              target="_blank"
-              >LinkedIn</a
-            >
-          </li>
+              href="https://www.linkedin.com/in/sameer-patil-785b58328"target="_blank">LinkedIn</a>
+            </li>
           <li><a href="https://github.com/Sameeratil" target="_blank">GitHub</a></li>
         </ul>
       </aside>
-    </main>
-
-    <footer>
+</main>
+<footer>
       <p>&copy; 2025 Sameer Patil All rights reserved.</p>
     </footer>
   </body>
