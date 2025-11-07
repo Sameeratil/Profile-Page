@@ -11,7 +11,25 @@
         margin: 0;
         padding: 0;
         line-height: 1.6;
-      }
+
+ /* Animated multicolor gradient */
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb, #84fab0, #8fd3f4);
+  background-size: 600% 600%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* Animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
       header,
       nav,
@@ -148,19 +166,20 @@
   <body>
     <header>
       <h1>Sameer Narendra Patil</h1>
-      <p>Web Developer | Data Science | Machine Learning</p>
+      <p>Web Developer | Data Science | Machine Learning | Full-Stack Developer</p>
     </header>
 
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
      </nav>
 
     <main>
      <article id="about" class="box">
-        <h2>About Me</h2>
+        <h2><u>About Me</u></h2>
         <p>
           Hello! I'm Sameer, a passionate web developer with good knowledge of
           HTML and CSS. I enjoy creating semantic, responsive, and accessible
@@ -169,7 +188,7 @@
       </article>
 
   <article id="projects" class="box">
-  <h2>Projects</h2>
+  <h2><u>Projects</u></h2>
   <details class="proj">
     <summary><strong>Portfolio Website</strong></summary>
     <p>
@@ -192,7 +211,7 @@
   </details>
 </article>
 <article id="skills" class="box">
-        <h2>Skills</h2>
+        <h2><u>Skills</u></h2>
         <ul>
           <li>HTML5 & CSS3</li>
           <li>JavaScript</li>
@@ -204,13 +223,33 @@
           <li>Git & GitHub</li>
         </ul>
       </article>
+     <article id="education" class="box">
+  <h2><u>Education</u></h2>
+
+  <p>
+    <strong>Bachelor of Engineering in Computer Engineering</strong><br />
+    SPPU University. 2021 - 2024
+  </p>
+
+  <p>
+    <strong>HSC (Higher Secondary Certificate)</strong><br />
+    Dr. D.Y Patil College of Arts, Commerce and Science, Pune (2017 - 2019)
+  </p>
+
+  <p>
+    <strong>SSC (Secondary School Certificate)</strong><br />
+    Mar Ivanious Convent High School
+  </p>
+</article>
+
+
 
     <aside id="contact">
-        <h2>Contact Info</h2>
+        <h2><u>Contact Info</u></h2>
         <p>Email: sameerpatil048@gmail.com</p>
         <p>Phone: 8408846457</p>
 
-        <h2>Social Links</h2>
+        <h2><u>Social Links</u></h2>
         <ul>
           <li>
             <a
