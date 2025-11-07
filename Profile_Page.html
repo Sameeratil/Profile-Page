@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Semantic Profile Page</title>
+    <title>Sameer Patil-Profile Page</title>
+
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -21,6 +22,19 @@
         margin: 10px;
         border: 1px solid #ddd;
         border-radius: 8px;
+
+        /* Smooth hover animation */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* ✅ Hover effect for all boxes */
+      header:hover,
+      nav:hover,
+      article:hover,
+      aside:hover,
+      footer:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
       }
 
       header {
@@ -57,13 +71,41 @@
         margin-right: 15px;
         text-decoration: none;
         color: #333;
+        transition: 0.3s ease;
       }
 
+      /* ✅ Text hover effect */
       nav a:hover {
         text-decoration: underline;
+        color: #5a00ff;
       }
+      .proj {
+  margin-bottom: 8px;
+  padding: 0;
+  border: none;
+}
+
+.proj summary {
+  font-size: 18px;
+  cursor: pointer;
+  list-style: none;
+  display: inline-block; /* ✅ Makes hover work properly */
+  padding: 3px 0;
+}
+
+.proj summary:hover {
+  color: #5a00ff;
+  text-decoration: underline;
+}
+
+.proj p {
+  margin-left: 10px;
+}
+
+      
     </style>
   </head>
+
   <body>
     <header>
       <h1>Sameer Narendra Patil</h1>
@@ -74,6 +116,7 @@
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
+      <a href="#skills">Skills</a>
     </nav>
 
     <main>
@@ -81,25 +124,57 @@
         <h2>About Me</h2>
         <p>
           Hello! I'm Sameer, a passionate web developer with good knowledge of
-          HTML, CSS, and JavaScript. I enjoy creating semantic, responsive, and
-          accessible web pages.
+          HTML and CSS. I enjoy creating semantic, responsive, and accessible
+          web pages.
         </p>
-              <article id="projects">
-
-        <h2>Projects</h2>
-        <ul>
-          <li>Portfolio Website</li>
-          <li>Air Quality Prediction App</li>
-          <li>Blog Platform</li>
-        </ul>
       </article>
 
-      <aside>
-              <article id="contact">
+   <article id="projects">
+  <h2>Projects</h2>
 
+  <details class="proj">
+    <summary><strong>Portfolio Website</strong></summary>
+    <p>
+      A personal website built using HTML and CSS to showcase my skills,
+      education, and projects.
+    </p>
+  </details>
+
+  <details class="proj">
+    <summary><strong>Air Quality Prediction App</strong></summary>
+    <p>
+      A machine learning project that predicts the Air Quality Index (AQI)
+      using historical data.
+    </p>
+  </details>
+
+  <details class="proj">
+    <summary><strong>Blog Platform</strong></summary>
+    <p>
+      A simple blog layout created using semantic HTML and responsive CSS.
+    </p>
+  </details>
+</article>
+
+
+
+      <article id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML5 & CSS3</li>
+          <li>JavaScript</li>
+          <li>Responsive Design</li>
+          <li>Data Analysis</li>
+          <li>Machine Learning Basics</li>
+        </ul>
+      </article>
+      
+
+      <aside id="contact">
         <h2>Contact Info</h2>
         <p>Email: sameerpatil048@gmail.com</p>
         <p>Phone: 8408846457</p>
+
         <h2>Social Links</h2>
         <ul>
           <li>
@@ -109,7 +184,7 @@
               >LinkedIn</a
             >
           </li>
-          <li><a href="https://github.com/Sameeratil">GitHub</a></li>
+          <li><a href="https://github.com/Sameeratil" target="_blank">GitHub</a></li>
         </ul>
       </aside>
     </main>
