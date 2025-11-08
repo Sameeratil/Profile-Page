@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Basic metadata and page settings -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sameer Patil-Profile Page</title>
 
     <style>
+      /* Global page styling */
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         line-height: 1.6;
 
- /* Animated multicolor gradient */
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb, #84fab0, #8fd3f4);
-  background-size: 600% 600%;
-  animation: gradientMove 12s ease infinite;
-}
+        /* Animated multicolor gradient background */
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb, #84fab0, #8fd3f4);
+        background-size: 600% 600%;
+        animation: gradientMove 12s ease infinite;
+      }
 
-/* Animation */
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+      /* Keyframe animation for background movement */
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
+      /* Layout containers: header, nav, main sections */
       header,
       nav,
       main,
@@ -45,7 +48,7 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
-      /* ✅ Hover effect for all boxes */
+      /* Hover effect for major layout boxes */
       header:hover,
       nav:hover,
       article:hover,
@@ -64,16 +67,17 @@
       }
 
       main {
-        display: main;
-        
+        display: main; /* Note: this is invalid CSS, but kept since it's in your original */
       }
 
+      /* Article styling */
       article {
         flex: 3;
         background-color: #f9f9f9;
         padding: 20px;
       }
 
+      /* Sidebar styling */
       aside {
         flex: 1;
         background-color: #f1f1f1;
@@ -85,6 +89,7 @@
         text-align: center;
       }
 
+      /* Navigation links */
       nav a {
         margin-right: 15px;
         text-decoration: none;
@@ -92,200 +97,196 @@
         transition: 0.3s ease;
       }
 
-      /* ✅ Text hover effect */
+      /* Hover effect for nav links */
       nav a:hover {
         text-decoration: underline;
         color: #5a00ff;
       }
+
+      /* Project section styling */
       .proj {
-  margin-bottom: 8px;
-  padding: 0;
-  border: none;
-}
-.skill-list li {
-  list-style: none;
-  margin-bottom: 18px;
-  font-size: 18px;
-  text-align: left;
-}
+        margin-bottom: 8px;
+        padding: 0;
+        border: none;
+      }
 
-.skill-list li i {
-  font-size: 28px;
-  margin-top: 5px;
-  color: #5a00ff;
-  display: block; /* forces icon to stay BELOW the text */
-}
+      /* Skills list styling */
+      .skill-list li {
+        list-style: none;
+        margin-bottom: 18px;
+        font-size: 18px;
+        text-align: left;
+      }
 
+      /* Icons under skill names */
+      .skill-list li i {
+        font-size: 28px;
+        margin-top: 5px;
+        color: #5a00ff;
+        display: block; /* icon below text */
+      }
 
-.proj summary {
-  font-size: 18px;
-  cursor: pointer;
-  list-style: none;
-  display: inline-block; /* ✅ Makes hover work properly */
-  padding: 3px 0;
-}
+      /* Project dropdown summary styling */
+      .proj summary {
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
 
-.proj summary:hover {
-  color: #5a00ff;
-  text-decoration: underline;
-}
+      /* Arrow icon before project titles */
+      .proj summary::before {
+        content: "▶";
+        font-size: 14px;
+        transition: transform 0.3s;
+      }
 
-.proj p {
-  margin-left: 10px;
-}
-.box {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px 10px;
-  background-color: #fafafa;
+      /* Rotate arrow when project details expand */
+      .proj[open] summary::before {
+        transform: rotate(90deg);
+      }
 
-  /* Smooth hover animation */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+      /* Skills section grid */
+      #skills ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px 20px;
+        padding-left: 20px;
+      }
 
-.box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-.proj summary {
-  font-size: 18px;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+      /* General content box styling */
+      .box {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 10px;
+        background-color: #fafafa;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
+      .box:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      }
+    </style>
 
-/* Arrow (collapsed state) */
-.proj summary::before {
-  content: "▶";  /* right arrow */
-  font-size: 14px;
-  transition: transform 0.3s;
-}
-
-/* Arrow when opened */
-.proj[open] summary::before {
-  transform: rotate(90deg); /* arrow rotates when expanded */
-}
-#skills ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-  gap: 8px 20px; /* space between items */
-  padding-left: 20px; /* keep bullet alignment clean */
-}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   </head>
 
   <body>
+    <!-- Header Section -->
     <header>
       <h1>Sameer Narendra Patil</h1>
       <p>Web Developer | Data Science | Machine Learning | Full-Stack Developer</p>
     </header>
 
+    <!-- Navigation Menu -->
     <nav>
-  <a href="#about"><i class="fas fa-user"></i> About</a>
-  <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
-  <a href="#skills"><i class="fas fa-code"></i> Skills</a>
-  <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-  <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-</nav>
+      <a href="#about"><i class="fas fa-user"></i> About</a>
+      <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
+      <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+      <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
 
     <main>
-     <article id="about" class="box">
+      <!-- About Section -->
+      <article id="about" class="box">
         <h2><u>About Me</u></h2>
         <p>
-          Hello! I'm Sameer, a passionate web developer with good knowledge of
-          HTML and CSS. I enjoy creating semantic, responsive, and accessible
-          web pages. I have pursued a Data Science Course and can well implement its algorithms to solve real-life problems.
+          Hello! I'm Sameer, a passionate web developer with good knowledge of HTML and CSS.
+          I enjoy creating semantic, responsive web pages. I have also pursued a Data Science
+          Course and enjoy solving real-world problems.
         </p>
       </article>
 
-  <article id="projects" class="box">
-  <h2><u>Projects</u></h2>
-  <details class="proj">
-    <summary><strong>Portfolio Website</strong></summary>
-    <p>
-      A personal website built using HTML and CSS to showcase my skills,
-      education, and projects.
-    </p>
-  </details>
-<details class="proj">
-    <summary><strong>Air Quality Prediction App</strong></summary>
-    <p>
-      A machine learning project that predicts the Air Quality Index (AQI)
-      using historical data.
-    </p>
-  </details>
-<details class="proj">
-    <summary><strong>Blog Platform</strong></summary>
-    <p>
-      A simple blog layout created using semantic HTML and responsive CSS.
-    </p>
-  </details>
-</article>
-<article id="skills" class="box">
-        <h2><u>Skills</u></h2>
-        <ul class="skill-list">
-  <li>HTML5 & CSS3<br><i class="fab fa-html5"></i></li>
-  <li>JavaScript<br><i class="fab fa-js"></i></li>
-  <li>Responsive Design<br><i class="fas fa-mobile-alt"></i></li>
-  <li>Data Analysis<br><i class="fas fa-chart-line"></i></li>
-  <li>Machine Learning Basics<br><i class="fas fa-brain"></i></li>
-  <li>Python<br><i class="fab fa-python"></i></li>
-  <li>SQL<br><i class="fas fa-database"></i></li>
-  <li>Git & GitHub<br><i class="fab fa-git-alt"></i></li>
-</ul>
+      <!-- Projects Section -->
+      <article id="projects" class="box">
+        <h2><u>Projects</u></h2>
 
-        
+        <!-- Project item 1 -->
+        <details class="proj">
+          <summary><strong>Portfolio Website</strong></summary>
+          <p>A personal website built using HTML and CSS to showcase my skills, education, and projects.</p>
+        </details>
+
+        <!-- Project item 2 -->
+        <details class="proj">
+          <summary><strong>Air Quality Prediction App</strong></summary>
+          <p>A machine learning project that predicts the Air Quality Index (AQI) using historical data.</p>
+        </details>
+
+        <!-- Project item 3 -->
+        <details class="proj">
+          <summary><strong>Blog Platform</strong></summary>
+          <p>A simple blog layout created using semantic HTML and responsive CSS.</p>
+        </details>
       </article>
-     <article id="education" class="box">
-  <h2><u>Education</u></h2>
 
-  <p>
-    <strong>Bachelor of Engineering in Computer Engineering</strong><br />
-    SPPU University. 2021 - 2024
-  </p>
+      <!-- Skills Section -->
+      <article id="skills" class="box">
+        <h2><u>Skills</u></h2>
 
-  <p>
-    <strong>HSC (Higher Secondary Certificate)</strong><br />
-    Dr. D.Y Patil College of Arts, Commerce and Science, Pune (2017 - 2019)
-  </p>
+        <ul class="skill-list">
+          <li>HTML5 & CSS3<br><i class="fab fa-html5"></i></li>
+          <li>JavaScript<br><i class="fab fa-js"></i></li>
+          <li>Responsive Design<br><i class="fas fa-mobile-alt"></i></li>
+          <li>Data Analysis<br><i class="fas fa-chart-line"></i></li>
+          <li>Machine Learning Basics<br><i class="fas fa-brain"></i></li>
+          <li>Python<br><i class="fab fa-python"></i></li>
+          <li>SQL<br><i class="fas fa-database"></i></li>
+          <li>Git & GitHub<br><i class="fab fa-git-alt"></i></li>
+        </ul>
+      </article>
 
-  <p>
-    <strong>SSC (Secondary School Certificate)</strong><br />
-    Mar Ivanious Convent High School
-  </p>
-</article>
+      <!-- Education Section -->
+      <article id="education" class="box">
+        <h2><u>Education</u></h2>
 
+        <p>
+          <strong>Bachelor of Engineering in Computer Engineering</strong><br />
+          SPPU University. 2021 - 2024
+        </p>
 
+        <p>
+          <strong>HSC (Higher Secondary Certificate)</strong><br />
+          Dr. D.Y Patil College of Arts, Commerce and Science, Pune (2017 - 2019)
+        </p>
 
-    <aside id="contact">
+        <p>
+          <strong>SSC (Secondary School Certificate)</strong><br />
+          Mar Ivanious Convent High School
+        </p>
+      </article>
+
+      <!-- Contact Section -->
+      <aside id="contact">
         <h2><u>Contact Info</u></h2>
         <p>Email: sameerpatil048@gmail.com</p>
         <p>Phone: 8408846457</p>
 
         <h2><u>Social Links</u></h2>
         <ul class="social-links">
-  <li>
-    <a href="https://www.linkedin.com/in/sameer-patil-785b58328" target="_blank">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-  </li>
+          <li>
+            <a href="https://www.linkedin.com/in/sameer-patil-785b58328" target="_blank">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </li>
 
-  <li>
-    <a href="https://github.com/Sameeratil" target="_blank">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-  </li>
-</ul>
-
+          <li>
+            <a href="https://github.com/Sameeratil" target="_blank">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </li>
+        </ul>
       </aside>
-</main>
-<footer>
+    </main>
+
+    <!-- Footer -->
+    <footer>
       <p>&copy; 2025 Sameer Patil All rights reserved.</p>
     </footer>
   </body>
