@@ -102,6 +102,20 @@
   padding: 0;
   border: none;
 }
+.skill-list li {
+  list-style: none;
+  margin-bottom: 18px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.skill-list li i {
+  font-size: 28px;
+  margin-top: 5px;
+  color: #5a00ff;
+  display: block; /* forces icon to stay BELOW the text */
+}
+
 
 .proj summary {
   font-size: 18px;
@@ -143,6 +157,7 @@
   gap: 6px;
 }
 
+
 /* Arrow (collapsed state) */
 .proj summary::before {
   content: "▶";  /* right arrow */
@@ -161,6 +176,8 @@
   padding-left: 20px; /* keep bullet alignment clean */
 }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   </head>
 
   <body>
@@ -170,12 +187,12 @@
     </header>
 
     <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-     </nav>
+  <a href="#about"><i class="fas fa-user"></i> About</a>
+  <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
+  <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+  <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+  <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
 
     <main>
      <article id="about" class="box">
@@ -212,16 +229,18 @@
 </article>
 <article id="skills" class="box">
         <h2><u>Skills</u></h2>
-        <ul>
-          <li>HTML5 & CSS3</li>
-          <li>JavaScript</li>
-          <li>Responsive Design</li>
-          <li>Data Analysis</li>
-          <li>Machine Learning Basics</li>
-          <li>Python</li>
-          <li>SQL</li>
-          <li>Git & GitHub</li>
-        </ul>
+        <ul class="skill-list">
+  <li>HTML5 & CSS3<br><i class="fab fa-html5"></i></li>
+  <li>JavaScript<br><i class="fab fa-js"></i></li>
+  <li>Responsive Design<br><i class="fas fa-mobile-alt"></i></li>
+  <li>Data Analysis<br><i class="fas fa-chart-line"></i></li>
+  <li>Machine Learning Basics<br><i class="fas fa-brain"></i></li>
+  <li>Python<br><i class="fab fa-python"></i></li>
+  <li>SQL<br><i class="fas fa-database"></i></li>
+  <li>Git & GitHub<br><i class="fab fa-git-alt"></i></li>
+</ul>
+
+        
       </article>
      <article id="education" class="box">
   <h2><u>Education</u></h2>
@@ -250,13 +269,20 @@
         <p>Phone: 8408846457</p>
 
         <h2><u>Social Links</u></h2>
-        <ul>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/sameer-patil-785b58328"target="_blank">LinkedIn</a>
-            </li>
-          <li><a href="https://github.com/Sameeratil" target="_blank">GitHub</a></li>
-        </ul>
+        <ul class="social-links">
+  <li>
+    <a href="https://www.linkedin.com/in/sameer-patil-785b58328" target="_blank">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+  </li>
+
+  <li>
+    <a href="https://github.com/Sameeratil" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+  </li>
+</ul>
+
       </aside>
 </main>
 <footer>
