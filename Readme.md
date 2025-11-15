@@ -3,6 +3,8 @@
 This is my *personal portfolio website* built using only *HTML & CSS*, showcasing my journey, skills, education, projects, and contact details.  
 The website is clean, modern, responsive, and includes smooth animations with an aesthetic multicolor gradient background.
 
+MY PROFILE LINK:-
+https://sameeratil.github.io/Profile-Page/
 ---
 
 ## ✨ Highlights of the Website
