@@ -19,6 +19,7 @@ body {
   animation: gradientMove 12s ease infinite;
 }
 
+
 /* Keyframe animation for background movement */
 @keyframes gradientMove {
   0% {
@@ -168,3 +169,129 @@ nav a:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
+/* Highlight active nav link */
+nav a.active {
+  color: #5a00ff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Fade-in animation elements */
+.box, header, nav, footer {
+  opacity: 0;
+  transform: translateY(40px);
+}
+#typing-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #5a00ff;
+  border-right: 2px solid #5a00ff;
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* Theme toggle button */
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 25px;
+  background: #5a00ff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+/* =============================
+   DARK MODE THEME COLORS
+   ============================= */
+
+.dark-mode {
+  background: #0d0d0d !important;
+  color: #ffffff !important;
+}
+
+.dark-mode header,
+.dark-mode nav,
+.dark-mode article,
+.dark-mode aside,
+.dark-mode footer,
+.dark-mode .box {
+  background: #1c1c1c !important;
+  color: #f2f2f2 !important;
+  border-color: #333 !important;
+}
+
+.dark-mode nav a {
+  color: #dcdcdc !important;
+}
+
+.dark-mode nav a:hover,
+.dark-mode nav a.active {
+  color: #8f83ff !important;
+}
+
+/* Skills icons color change */
+.dark-mode .skill-list li i {
+  color: #b29bff;
+}
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  padding: 10px 16px;
+  background: #5a00ff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: 0.3s ease;
+}
+
+#back-to-top:hover {
+  transform: scale(1.08);
+}
+#contact i.fa-envelope {
+  margin-right: 8px;
+  color: #5a00ff;
+  font-size: 18px;
+}
+#language-selector {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  padding: 8px 12px;
+  background: #ffffffdd;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#language-selector select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+

@@ -19,20 +19,30 @@
 
     <header>
       <h1>Sameer Narendra Patil</h1>
-      <p>
-        Web Developer | Data Science | Machine Learning | Full-Stack Developer
-      </p>
+      <p id="typing-text"></p>
+
     </header>
 
     <!-- Navigation Menu -->
     <nav>
-      <a href="#about"><i class="fas fa-user"></i> About</a>
-      <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
-      <a href="#skills"><i class="fas fa-code"></i> Skills</a>
-      <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-    </nav>
+  <a href="#about"><i class="fas fa-user"></i> <span data-i18n="nav.about">About</span></a>
+  <a href="#projects"><i class="fas fa-folder-open"></i> <span data-i18n="nav.projects">Projects</span></a>
+  <a href="#skills"><i class="fas fa-code"></i> <span data-i18n="nav.skills">Skills</span></a>
+  <a href="#education"><i class="fas fa-graduation-cap"></i> <span data-i18n="nav.education">Education</span></a>
+  <a href="#contact"><i class="fas fa-envelope"></i> <span data-i18n="nav.contact">Contact</span></a>
+</nav>
 
+<!-- put language selector right after nav (CSS will pin it top-right) -->
+<div id="language-selector">
+  <label for="lang">🌐</label>
+  <select id="lang" aria-label="Select language">
+    <option value="en">English</option>
+    <option value="hi">हिन्दी</option>
+    <option value="mr">मराठी</option>
+  </select>
+</div>
+
+            
     <main>
       <!-- About Section -->
       <article id="about" class="box">
@@ -116,7 +126,10 @@
       <!-- Contact Section -->
       <aside id="contact">
         <h2><u>Contact Info</u></h2>
-        <p>Email: sameerpatil048@gmail.com</p>
+<p>
+  <i class="fas fa-envelope"></i>
+  <a href="mailto:sameerpatil048@gmail.com" id="email-link">sameerpatil048@gmail.com</a>
+</p>
         <p>Phone: 8408846457</p>
 
         <h2><u>Social Links</u></h2>
@@ -143,6 +156,8 @@
     <footer>
       <p>&copy; 2025 Sameer Patil All rights reserved.</p>
     </footer>
+    <script src="script.js"></script>
+<button id="theme-toggle">🌙 Dark Mode</button>
+<button id="back-to-top">▲ Back to Top</button>
   </body>
 </html>
-
